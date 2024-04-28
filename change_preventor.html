@@ -85,6 +85,72 @@
           <img id="footer" src="/assets/strawberry-footer.png" alt="" />
         </div>
       </div>
+
+      <div class="shotgun_surgery">
+        <h1 class="subtitle">#2 Shotgun Surgery</h1>
+        <div class="content">
+          <img src="assets/lotso-shotgunsurgery.png" alt="" />
+          <p>
+            Shotgun surgery is a code smell that occurs when a single change to
+            a codebase requires many small modifications across multiple
+            classes, components, or modules.
+          </p>
+        </div>
+        <div class="ex">
+          <h2>example</h2>
+          <img
+            src="assets/example/change_preventor_example/shotgun_surgery_e.png"
+            alt="" />
+        </div>
+        <div class="treat">
+          <h2 class="treatment">Treatment</h2>
+          <p>
+            To eliminate redundant parallel class hierarchies, follow these
+            steps: Initially, establish instances of one hierarchy that
+            reference instances of another hierarchy. Then, eradicate the
+            hierarchy within the referenced class using techniques like Move
+            Method and Move Field.
+          </p>
+          <img
+            src="/assets/treatment/change_preventer_treatment/shotgun_surgery_t.png"
+            alt="" />
+          <img id="footer" src="/assets/strawberry-footer.png" alt="" />
+        </div>
+      </div>
+
+      <div class="parallel_inheritance_hierarchies">
+        <h1 class="subtitle">#3 Parallel Inheritance Hierarchies</h1>
+        <div class="content">
+          <img src="assets/lotso-parallelinheritance.png" alt="" />
+          <p>
+            Parallel inheritance hierarchies occur when two or more hierarchies
+            of classes evolve in parallel, with each hierarchy mirroring the
+            structure of the other. This often happens when changes in one
+            hierarchy necessitate corresponding changes in another, leading to
+            tightly coupled code.
+          </p>
+        </div>
+        <div class="ex">
+          <h2>example</h2>
+          <img
+            src="assets/example/change_preventor_example/parallel_inheritance_e.png"
+            alt="" />
+        </div>
+        <div class="treat">
+          <h2 class="treatment">Treatment</h2>
+          <p>
+            To eliminate redundant parallel class hierarchies, follow these
+            steps: Initially, establish instances of one hierarchy that
+            reference instances of another hierarchy. Then, eradicate the
+            hierarchy within the referenced class using techniques like Move
+            Method and Move Field.
+          </p>
+          <img
+            src="/assets/treatment/change_preventer_treatment/parallel_inheritance_t.png"
+            alt="" />
+          <img id="footer" src="/assets/strawberry-footer.png" alt="" />
+        </div>
+      </div>
     </div>
   </body>
 </html>

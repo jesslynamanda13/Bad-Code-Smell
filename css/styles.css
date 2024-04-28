@@ -123,7 +123,7 @@ html {
   align-items: center;
 }
 .ex img {
-  width: 70vh;
+  width: 700px;
 }
 .treat {
   padding-top: 2vw;
@@ -149,9 +149,21 @@ html {
 
 .treat img {
   padding-top: 2vw;
-  width: 70vh;
+  width: 700px;
+}
+.treat p {
+  color: #000000;
+  font-size: 20px;
 }
 
 #footer {
   width: 14%;
+}
+
+.shotgun_surgery {
+  margin: 10vw;
+}
+
+.parallel_inheritance_hierarchies {
+  margin: 10vw;
 }

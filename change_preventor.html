@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Change Preventer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Gaegu&display=swap"
+      rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div class="change_preventer">
+      <nav class="navbar">
+        <div class="logo">
+          <img src="assets/logo.png" alt="Logo" />
+        </div>
+        <div class="navbar-text">
+          <a href="dispensable.html" class="text">The Dispensable</a>
+          <a href="change_preventor.html" class="selected-text"
+            >The Change Preventor</a
+          >
+        </div>
+      </nav>
+      <div class="container">
+        <img
+          class="image-land"
+          src="assets/lotso-died.png"
+          alt="Image"
+          class="centered" />
+        <div class="subtext">Bad Code Smell</div>
+        <h1 class="title">The Change Preventor</h1>
+        <div class="subtext-2">
+          The "Change Preventers" code smell refers to code structures that are
+          tightly coupled or interconnected in such a way that making changes to
+          one part of the code requires modifications to multiple other areas of
+          the program. These changes often cascade across the codebase,
+          increasing the risk of introducing bugs and making the codebase more
+          difficult to maintain and extend.
+        </div>
+      </div>
+
+      <div class="divergent_change">
+        <h1 class="subtitle">#1 Divergent Change</h1>
+        <div class="content">
+          <img src="assets/lotso-divergentchange.png" alt="" />
+          <p>
+            Divergent change is a code smell that occurs when making changes to
+            a class requires changing many unrelated methods. For example, when
+            adding a new product type, you may need to change the methods for
+            finding, displaying, and ordering products. 
+          </p>
+        </div>
+        <div class="ex">
+          <h2>example</h2>
+          <img
+            src="assets/example/change_preventor_example/divergent_change.png"
+            alt="" />
+        </div>
+        <div class="treat">
+          <h2 class="treatment">Treatment</h2>
+          <ul>
+            <li>
+              When you notice that a class is responsible for multiple unrelated
+              tasks or behaviors, consider splitting up its responsibilities
+              using the Extract Class refactoring technique. This involves
+              identifying distinct sets of behavior within the class and moving
+              them into separate classes.
+            </li>
+            <li>
+              Similarly, if you find that multiple classes share similar
+              behavior, you might want to combine them using inheritance. This
+              can be achieved through Extract Superclass or Extract Subclass
+              refactorings, depending on the relationship between the classes.
+            </li>
+          </ul>
+          <img
+            src="/assets/treatment/change_preventer_treatment/divergent_change.png"
+            alt="" />
+          <img id="footer" src="/assets/strawberry-footer.png" alt="" />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

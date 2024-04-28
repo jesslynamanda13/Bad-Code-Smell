@@ -1,85 +1,157 @@
-
-body, html {
-    margin: 0;
-    padding: 0;
-    background-color: #FFFBF3; 
+body,
+html {
+  margin: 0;
+  padding: 0;
+  background-color: #fffbf3;
+  line-height: 40px;
 }
 
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
 }
 
 .logo img {
-    height: 60px; 
-    width: auto; 
+  height: 60px;
+  width: auto;
 }
 
 .navbar-text {
-    font-family: 'Gaegu';
-    font-weight: 600; 
+  font-family: "Gaegu";
+  font-weight: 600;
 }
 
 .text {
-    margin-left: 40px;
-    color: #919191;
-    font-size: 16px; 
-    text-decoration: none;
+  margin-left: 40px;
+  color: #919191;
+  font-size: 16px;
+  text-decoration: none;
 }
 
 .selected-text {
-    margin-left: 40px;
-    color: #B93A57;
-    font-size: 16px; 
-    text-decoration: none;
+  margin-left: 40px;
+  color: #b93a57;
+  font-size: 16px;
+  text-decoration: none;
 }
 
 .container {
-    margin-top: 60px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-left: 200px;
-    padding-right: 200px;
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-left: 200px;
+  padding-right: 200px;
 }
 
 .centered {
-    display: block;
-    margin: 0 auto;
+  display: block;
+  margin: 0 auto;
 }
 
-.image-land{
-    width: 200px;
-    height: auto;
+.image-land {
+  width: 200px;
+  height: auto;
 }
 
 .subtext {
-    margin-top: 20px;
-    font-family: 'Gaegu';
-    font-weight: 600;
-    font-size: 20px;
-    text-align: center; 
-    color: #F587A6;
+  margin-top: 20px;
+  font-family: "Gaegu";
+  font-weight: 600;
+  font-size: 20px;
+  text-align: center;
+  color: #f587a6;
 }
 
 .title {
-    font-family: 'DM Sans';
-    font-weight: 600;
-    color: #B93A57;
-    font-size: 32px;
-    text-align: center;
-    align-self: center;
-    margin-top: 10px;
-    margin-bottom: 15px;
+  font-family: "DM Sans";
+  font-weight: 600;
+  color: #b93a57;
+  font-size: 32px;
+  text-align: center;
+  align-self: center;
+  margin-top: 10px;
+  margin-bottom: 15px;
 }
 
 .subtext-2 {
-    font-family: 'Gaegu';
-    font-weight: 600;
-    font-size: 20px;
-    text-align: center;
-    color: #000000;
+  font-family: "Gaegu";
+  font-weight: 600;
+  font-size: 20px;
+  text-align: center;
+  color: #000000;
+}
+.divergent_change {
+  margin: 10vw;
+}
+.subtitle {
+  font-family: "DM Sans";
+  font-weight: 600;
+  color: #b93a57;
+  font-size: 32px;
+}
+.content {
+  padding-top: 2vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10vw;
+  padding-bottom: 4vw;
+}
+.content img {
+  width: 30vw;
+}
+.content p {
+  width: 600px;
+  text-align: justify;
+  font-family: "Gaegu";
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.ex {
+  font-family: "Gaegu";
+  font-weight: 600;
+  color: #b93a57;
+  font-size: 26px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.ex img {
+  width: 70vh;
+}
+.treat {
+  padding-top: 2vw;
+  font-family: "Gaegu";
+  font-weight: 600;
+  font-size: 26px;
+  color: #b93a57;
+  text-align: justify;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.treat ul {
+  margin: 0;
+  padding: 0;
+}
+
+.treat ul li {
+  color: #000000;
+  font-size: 20px;
+}
+
+.treat img {
+  padding-top: 2vw;
+  width: 70vh;
+}
+
+#footer {
+  width: 14%;
 }

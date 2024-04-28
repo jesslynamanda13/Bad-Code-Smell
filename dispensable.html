@@ -29,11 +29,265 @@
         </div>
 
         <div class="comment">
-            <div class="title-text">
-                <p>#1 Comment</p>
+            <h1 class="subtitle">#1 Comment</h1>
+            <div class="content">
+              <img src="assets/lotso-comment.png" alt="" />
+              <p>
+                Commenting out code is considered a code smell. While adding comments to explain logic is a commendable practice, leaving unnecessary over-explanatory comments is not a good thing.
+                <br>
+                Comments can sometimes serve as a way to mask or hide a bad code smell. When a piece of code is particularly convoluted, inefficient, or violates best practices, developers may add comments to explain its purpose or justify its presence. These comments might make the code appear more understandable or acceptable at first glance.
+              </p>
             </div>
+            <div class="ex">
+              <h2>example</h2>
+              <img
+                src="assets/example/dispensable_example/comment.png"
+                alt="" />
+            </div>
+            <div class="treat">
+              <h2 class="treatment">Treatment</h2>
+              <ul>
+                <li>
+                    When a comment is used to clarify a complex expression, it's better to break down the expression into simpler subexpressions using Extract Variable.
+                </li>
+                <li>
+                    If a comment describes a section of code, consider extracting that section into a separate method using Extract Method. The name of the new method can often be derived from the comment itself.
+                </li>
+                <li>
+                    If a method has already been extracted but comments are still required to explain its purpose, ensure the method has a descriptive name that reflects its functionality. Use Rename Method if necessary.
+                </li>
+                <li>
+                    When you need to enforce rules about a necessary state for the system to function correctly, use Introduce Assertion to make these conditions explicit in the code.
+                </li>
+              </ul>
+              <img
+                src="/assets/treatment/change_preventer_treatment/divergent_change.png"
+                alt="" />
+              <img id="footer" src="/assets/strawberry-footer.png" alt="" />
+            </div>
+          </div>
         </div>
 
+        <div class="duplicate-code">
+            <h1 class="subtitle">#2 Duplicate Code</h1>
+            <div class="content">
+              <img src="assets/lotso-duplicatecode.png" alt="" />
+              <p>
+                Duplicate code is a prevalent code smell primarily because it occurs when identical code segments are replicated across various sections of an application. This redundancy not only complicates code maintenance but also elevates the likelihood of introducing errors and security flaws.
+              </p>
+            </div>
+            <div class="ex">
+              <h2>example</h2>
+              <img
+                src="assets/example/dispensable_example/duplicate-code.png"
+                alt="" />
+            </div>
+            <div class="treat">
+              <h2 class="treatment">Treatment</h2>
+              <ul>
+                <li>
+                    When duplicate code is within the same class:
+                    <br>
+                    - Utilize Extract Method to isolate the repeated code into its own method, and then call this method from both places where the duplicate code was initially found.
+                </li>
+                <li>
+                    If duplicate code exists in subclasses of the same level:
+                    <br>
+                    - Apply Extract Method to both subclasses, then employ Pull Up Field for any fields used in the extracted method to bring them up to a common superclass level.
+                </li>
+                <li>
+                    If duplicate code is within a constructor:
+                    <br>
+                    - Use Pull Up Constructor Body to consolidate the common constructor logic into a superclass if applicable.
+                </li>
+                <li>
+                    If the duplicate code is similar but not identical:
+                    <br>
+                    - Consider using Form Template Method to create a template method and allow subclasses to implement specific behaviors.
+                </li>
+                <li>
+                    If two methods perform the same task but with different algorithms:
+                    <br>
+                    - Choose the superior algorithm and apply Substitute Algorithm to ensure consistency across the codebase.
+                </li>
+                <li>
+                    When duplicate code is found across different classes:
+                    <br>
+                    - If classes aren't part of a hierarchy, utilize Extract Superclass to create a common superclass containing shared functionality.
+                    <br>
+                    - If creating a superclass is impractical, use Extract Class on one class and incorporate the new component into the other.
+                </li>
+                <li>
+                    For cases involving numerous conditional expressions:
+                    <br>
+                    - Apply Consolidate Conditional Expression to merge similar conditions, and then use Extract Method to encapsulate the condition logic into a separate, clearly named method.
+                </li>
+                <li>
+                    If the same code exists in all branches of a conditional expression:
+                    <br>
+                    - Remove the duplicate code from the condition tree using Consolidate Duplicate Conditional Fragments.
+                </li>
+              </ul>
+              <img
+                src="assets/treatment/dispensable_treatment/duplicate-code.png"
+                alt="" />
+              <img id="footer" src="/assets/strawberry-footer.png" alt="" />
+            </div>
+          </div>
+        </div>
+
+        <div class="lazy-class">
+            <h1 class="subtitle">#3 Lazy Class</h1>
+            <div class="content">
+              <img src="assets/lotso-lazy_class.png" alt="" />
+              <p>
+                A lazy class is a code smell where a class exists but adds little to the software's behavior or functionality. This can clutter the codebase and raise complexity, burdening developers with higher cognitive load.
+              </p>
+            </div>
+            <div class="ex">
+              <h2>example</h2>
+              <img
+                src="assets/example/dispensable_example/lazy-class.png"
+                alt="" />
+            </div>
+            <div class="treat">
+              <h2 class="treatment">Treatment</h2>
+              <ul>
+                <li>
+                    Inline Class Treatment: When components within a system are nearly useless or contribute very little to its functionality, it's advisable to apply the Inline Class treatment. This means merging or incorporating the functionality of these components directly into the classes or components that use them.
+                </li>
+                <li>
+                    Collapse Hierarchy: For subclasses that have few functions or provide little additional functionality compared to their parent class, consider applying the Collapse Hierarchy technique. This involves removing unnecessary levels of inheritance by merging the subclass into its parent class or directly incorporating its functionality into other classes. This simplifies the inheritance structure and reduces unnecessary complexity in the codebase.
+                </li>
+              </ul>
+              <img
+                src="assets/treatment/dispensable_treatment/lazy-class.png"
+                alt="" />
+              <img id="footer" src="/assets/strawberry-footer.png" alt="" />
+            </div>
+          </div>
+        </div>
+
+        <div class="data-class">
+            <h1 class="subtitle">#4 Data Class</h1>
+            <div class="content">
+              <img src="assets/lotso-data-class.png" alt="" />
+              <p>
+                A data class refers to a class that contains 
+                only fields and crude methods for accessing them (getters and setters). These are simply containers for data used by other classes. These classes don’t contain any additional functionality and can’t independently operate on the data that they own.
+              </p>
+            </div>
+            <div class="ex">
+              <h2>example</h2>
+              <img
+                src="assets/example/dispensable_example/data-class.png"
+                alt="" />
+            </div>
+            <div class="treat">
+              <h2 class="treatment">Treatment</h2>
+              <ul>
+                <li>
+                    If a class contains public fields, use Encapsulate Field to hide them from direct access and require that access be performed via getters and setters only.
+                </li>
+                <li>
+                    Use Encapsulate Collection for data stored in collections (such as arrays).
+                </li>
+                <li>
+                    Review the client code that uses the class. In it, you may find functionality that would be better located in the data class itself. If this is the case, use Move Method and Extract Method to migrate this functionality to the data class.
+                </li>
+                <li>
+                    After the class has been filled with well thought-out methods, you may want to get rid of old methods for data access that give overly broad access to the class data. For this, Remove Setting Method and Hide Method may be helpful.
+                </li>
+              </ul>
+              <img
+                src="assets/treatment/dispensable_treatment/data-class.png"
+                alt="" />
+              <img id="footer" src="/assets/strawberry-footer.png" alt="" />
+            </div>
+          </div>
+        </div>
+
+        <div class="dead-code">
+            <h1 class="subtitle">#5 Dead Code</h1>
+            <div class="content">
+              <img src="assets/dead-code.png" alt="" />
+              <p>
+                A variable, parameter, field, method or class is no longer used 
+                (usually because it’s obsolete). When requirements for the software have changed or corrections have been made, nobody had time to clean up the old code. Such code could also be found in complex conditionals, when one of the branches becomes unreachable (due to error or other circumstances).
+              </p>
+            </div>
+            <div class="ex">
+              <h2>example</h2>
+              <img
+                src="assets/example/dispensable_example/dead-code.png"
+                alt="" />
+            </div>
+            <div class="treat">
+              <h2 class="treatment">Treatment</h2>
+              <ul>
+                <li>
+                    The quickest way to find dead code is to use a good IDE.
+                </li>
+                <li>
+                    Delete unused code and unneeded files.
+                </li>
+                <li>
+                    In the case of an unnecessary class, Inline Class or Collapse Hierarchy can be applied if a subclass or superclass is used.
+                </li>
+                <li>
+                    To remove unneeded parameters, use Remove Parameter.
+                </li>
+              </ul>
+              <img
+                src="assets/treatment/dispensable_treatment/dead-code.png"
+                alt="" />
+              <img id="footer" src="/assets/strawberry-footer.png" alt="" />
+            </div>
+          </div>
+        </div>
+
+        <div class="speculative-generality">
+            <h1 class="subtitle">#6 Speculative Generality</h1>
+            <div class="content">
+              <img src="assets/speculative-generality.png" alt="" />
+              <p>
+                Sometimes code is created “just in case” to support anticipated future features that never get implemented. As a result, code becomes hard to understand and support.
+              </p>
+            </div>
+            <div class="ex">
+              <h2>example</h2>
+              <img
+                src="assets/example/dispensable_example/speculative-generality.png"
+                alt="" />
+            </div>
+            <div class="treat">
+              <h2 class="treatment">Treatment</h2>
+              <ul>
+                <li>
+                    For removing unused abstract classes, try Collapse Hierarchy.
+Methods with unused parameters should be given a look with the help of Remove Parameter.
+Unused fields can be simply deleted.
+                </li>
+                <li>
+                    Unnecessary delegation of functionality to another class can be eliminated via Inline Class.
+                </li>
+                <li>
+                    Unused methods? Use Inline Method to get rid of them.
+                </li>
+                <li>
+                    Methods with unused parameters should be given a look with the help of Remove Parameter.
+                </li>
+                <li>
+                    Unused fields can be simply deleted.
+                </li>
+              </ul>
+              <img
+                src="assets/treatment/dispensable_treatment/speculative-generality.png"
+                alt="" />
+              <img id="footer" src="/assets/strawberry-footer.png" alt="" />
+            </div>
+          </div>
+        </div>
     </div>
 </body>
 </html>

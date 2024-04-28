@@ -84,7 +84,7 @@ html {
   text-align: center;
   color: #000000;
 }
-.divergent_change {
+.divergent_change, .comment, .duplicate-code, .lazy-class, .data-class, .dead-code, .speculative-generality {
   margin: 10vw;
 }
 .subtitle {
